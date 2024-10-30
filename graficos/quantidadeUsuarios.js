@@ -1,4 +1,4 @@
-import { getCSS, tickConfig } from "./Common.js"
+import { getCSS, tickConfig, criarGrafico } from "./Common.js"
 
 async function quantidadeUsuariosPorRede() {
     const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json'
@@ -48,12 +48,11 @@ async function quantidadeUsuariosPorRede() {
                 }
             }
         }
+    
     }
 
-    const grafico = document.createElement('div')
-    grafico.className = 'grafico'
-    document.getElementById('graficos-container').appendChild(grafico)
-    Plotly.newPlot(grafico, data, laytout)
+    criarGrafico(data, laytout)
+   
 }
 
 quantidadeUsuariosPorRede()
