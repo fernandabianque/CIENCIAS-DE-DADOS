@@ -1,4 +1,4 @@
-import { getCSS,criarGrafico } from "./Common.js"
+import { getCSS,criarGrafico, incluirTexto } from "./Common.js"
 
 async function redesFavoritasMundo() {
     const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/redes-favoritas.json'
@@ -39,6 +39,7 @@ async function redesFavoritasMundo() {
 
     criarGrafico(data, layout)
 
+    incluirTexto(`Embora o <span> instagram</span> ocupe a quarta posição de redes sociais com mais usuários no mundo, ela é a rede social que as pessoas mais gostam. Seguida de WhatsApp e Facebook. `)
 }   
 
 redesFavoritasMundo()
